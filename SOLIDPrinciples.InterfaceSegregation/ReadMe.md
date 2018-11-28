@@ -1,0 +1,3 @@
+﻿# SOLID Principles
+
+## Interface Segragation
