@@ -15,8 +15,9 @@ namespace SOLIDPrinciples.OpenClose
         public string Name { get; set; }
         // add new property
         public string EmployeeType { get; set; }
+
         public Employee() { }
-        
+
         // add new property in parameters
         public Employee(int Id, string Name, string employeeType)
         {
@@ -25,10 +26,17 @@ namespace SOLIDPrinciples.OpenClose
             // add parameter value to class
             this.EmployeeType = employeeType;
         }
-        public decimal CalculateBonus(decimal salary)
+
+        // add new parameter
+        public decimal CalculateBonus(decimal salary, string employeeType)
         {
-            return salary * .1M;
+            // add if to validate the parameter
+            if (employeeType == "Temporary")
+                return salary * .05M;
+            else
+                return salary * .1M;
         }
+
         public override string ToString()
         {
             return string.Format("Id: {0} Name: {1}", this.Id, this.Name);
