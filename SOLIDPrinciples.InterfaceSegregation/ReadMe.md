@@ -1,3 +1,5 @@
 ﻿# SOLID Principles
 
 ## Interface Segragation
+
+No client should be forced to depend on methods it does not use. Splits interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them.
