@@ -10,9 +10,11 @@ namespace SOLIDPrinciples.LiskovSubstitution
     {
         static void Main(string[] args)
         {
-            List<Employee> lEmp = new List<Employee>();
-            lEmp.Add(new EmployeeType(1, "Zé", "Temporary"));
-            lEmp.Add(new EmployeeType(2, "Tunico", "Effective"));
+            List<Employee> lEmp = new List<Employee>
+            {
+                new EmployeeType(1, "Zé", "Temporary"),
+                new EmployeeType(2, "Tunico", "Effective")
+            };
             // lEmp.Add(new EmployeeContract());
             foreach (var emp in lEmp)
             {
@@ -25,10 +27,12 @@ namespace SOLIDPrinciples.LiskovSubstitution
 
             Console.WriteLine();
 
-            List<IEmployee> iEmp = new List<IEmployee>();
-            iEmp.Add(new EmployeeType(1, "Zé", "Temporary"));
-            iEmp.Add(new EmployeeType(2, "Tunico", "Effective"));
-            iEmp.Add(new EmployeeContract(3, "Carlao"));
+            List<IEmployee> iEmp = new List<IEmployee>
+            {
+                new EmployeeType(1, "Zé", "Temporary"),
+                new EmployeeType(2, "Tunico", "Effective"),
+                new EmployeeContract(3, "Carlao")
+            };
             foreach (var emp in iEmp)
             {
                 Console.WriteLine("Employee: {0}, Minimum Salary: {1}",
