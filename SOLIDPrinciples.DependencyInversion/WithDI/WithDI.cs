@@ -4,6 +4,11 @@ using System.Text;
 
 namespace SOLIDPrinciples.DependencyInversion.WithDI
 {
+    public interface IRepositoryLayer
+    {
+        void Save(Object details);
+    }
+
     public class BusinessLogicLayer
     {
         private readonly IRepositoryLayer DAL;
@@ -15,11 +20,6 @@ namespace SOLIDPrinciples.DependencyInversion.WithDI
         {
             DAL.Save(details);
         }
-    }
-
-    public interface IRepositoryLayer
-    {
-        void Save(Object details);
     }
 
     public class DataAccessLayer : IRepositoryLayer
